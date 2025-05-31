@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The CSS Box Model</title>
+    <link rel="stylesheet" href="../styles.css">
+
+    <style>
+        section {
+            display: flex;
+            flex-direction: column;
+            padding: 0 2rem 2rem 2rem;
+            gap: 1rem;
+        }
+
+        img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+        }
+
+        .content-box,
+        .border-box {
+            width: 160px;
+            height: 80px;
+            padding: 20px;
+            border: 8px solid red;
+            background-color: yellow;
+        }
+
+        .content-box {
+            box-sizing: content-box;
+        }
+
+        .box-model {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        h1 {
+            margin-left: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>The CSS Box Model</h1>
+
+    <section>
+        <h2>What is the CSS Box Model?</h2>
+
+        <p>Everything in CSS is a box. The CSS Box Model is what wraps each box (HTML element) on a web page - it
+            consists of 4 parts.</p>
+
+        <ol>
+            <li>Margin - the outer space between the element and other elements</li>
+            <li>Padding - the inner space between the element content and border</li>
+            <li>Border - the element border</li>
+            <li>Content - the element content</li>
+        </ol>
+
+        <img src="../images/boxmodel.png" alt="an image of the CSS box model">
+    </section>
+
+
+    <section>
+        <h2>Box sizing</h2>
+
+        <p>The <code>box-sizing</code> CSS property controls how the box model is calculated.</p>
+
+        <p>Each box has the same <code>width</code>, <code>heigth</code>, <code>margin</code>,
+            <code>padding</code> and <code>border</code>.
+        </p>
+
+        <p>The first box has <code>box-sizing: content-box</code>, the second one
+            <code>box-sizing: border-box</code>
+        </p>
+
+        <p><code>content-box</code> - Total width <b>216px</b> (padding and border are added on top of width)</p>
+        <p><code>border-box</code> - Total width <b>160px</b> (padding and border are subtracted from content - the
+            box
+            preserves 160px in size)</p>
+
+        <p>This eliminates the need to calculate a box's final size.</p>
+
+        <div class="box-model">
+            <div class="content-box">Content box</b></div>
+            <div class="border-box">Border box</div>
+        </div>
+
+
+
+    </section>
+</body>
+
+</html>
